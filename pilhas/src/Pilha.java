@@ -63,4 +63,24 @@ public class Pilha<T>{
 
         return aux;
     }
+
+    //verificar palindromo
+    public boolean ehPalindromo(String palavra){
+
+        Pilha<Character> pilha = new Pilha<>(palavra.length());
+
+        for (int i= 0; i < palavra.length(); i++){
+            pilha.empilha(palavra.charAt(i));
+        }
+
+        for (int i= 0; i < palavra.length(); i++){
+            if (palavra.charAt(i) != pilha.desempilha()){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
 }
